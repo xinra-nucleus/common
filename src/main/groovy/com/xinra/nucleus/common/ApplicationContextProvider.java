@@ -1,6 +1,5 @@
 package com.xinra.nucleus.common;
 
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
@@ -21,10 +20,13 @@ public class ApplicationContextProvider implements ApplicationContextAware {
   protected ApplicationContextProvider() {}
 
   @Override
-  public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+  public void setApplicationContext(ApplicationContext applicationContext) {
     ApplicationContextProvider.applicationContext = applicationContext;
   }
   
+  /**
+   * Returns the current application context or {@code null} if there is none.
+   */
   public static ApplicationContext getApplicationContext() {
     return applicationContext;
   }
