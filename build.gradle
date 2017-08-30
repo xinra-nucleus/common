@@ -13,7 +13,7 @@ apply plugin: 'com.novoda.bintray-release'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-version = '0.1.0'
+version = '0.1.1'
 
 jar {
     manifest {
@@ -30,7 +30,9 @@ dependencies {
     compile 'com.google.guava:guava:19.0'
     compile 'org.codehaus.groovy:groovy:2.4.7'
     compile 'org.springframework:spring-context:4.3.5.RELEASE'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile 'junit:junit:4.+'
+    testCompile 'org.mockito:mockito-core:2.+'
+    testCompile 'org.assertj:assertj-core:3.8.0'
 }
 
 publish {
@@ -38,7 +40,7 @@ publish {
     repoName = 'nucleus'
     groupId = 'com.xinra.nucleus'
     artifactId = 'nucleus-common'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.1'
     licences = ['BSD 3-Clause']
     desc = 'Nucleus cross-layer utilities'
     website = 'https://github.com/xinra-nucleus/nucleus-common'
